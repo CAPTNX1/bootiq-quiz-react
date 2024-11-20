@@ -1,0 +1,104 @@
+{
+  "questions": [
+    {
+      "category": "Filmy",
+      "question": "Kdo je Batman?",
+      "score": 10
+    },
+    {
+      "category": "Filmy",
+      "question": "Kdo je Batman?",
+      "score": 20
+    },
+    {
+      "category": "Filmy",
+      "question": "Kdo je Batman?",
+      "score": 30
+    },
+    {
+      "category": "Filmy",
+      "question": "Kdo je Batman?",
+      "score": 50
+    },
+    {
+      "category": "Filmy",
+      "question": "Kdo je Batman?",
+      "score": 100
+    },
+    {
+      "category": "IT",
+      "question": "Co je x86??",
+      "score": 10
+    },
+    {
+      "category": "IT",
+      "question": "Co je x86??",
+      "score": 20
+    },
+    {
+      "category": "IT",
+      "question": "Co je x86??",
+      "score": 20
+    },
+    {
+      "category": "IT",
+      "question": "Co je x86??",
+      "score": 20
+    },
+    {
+      "category": "IT",
+      "question": "Co je x86??",
+      "score": 20
+    },
+    {
+      "category": "Zemepis",
+      "question": "Kde je Mt. Everest?",
+      "score": 50
+    },
+    {
+      "category": "Zemepis",
+      "question": "Kde je Mt. Everest?",
+      "score": 50
+    },
+    {
+      "category": "Zemepis",
+      "question": "Kde je Mt. Everest?",
+      "score": 50
+    },
+    {
+      "category": "Zemepis",
+      "question": "Kde je Mt. Everest?",
+      "score": 50
+    },
+    {
+      "category": "Zemepis",
+      "question": "Kde je Mt. Everest?",
+      "score": 50
+    },
+    {
+      "category": "Alkohol",
+      "question": "RUM?",
+      "score": 100
+    },
+    {
+      "category": "Alkohol",
+      "question": "RUM?",
+      "score": 100
+    },
+    {
+      "category": "Alkohol",
+      "question": "RUM?",
+      "score": 100
+    },
+    {
+      "category": "Alkohol",
+      "question": "RUM?",
+      "score": 100
+    },
+    {
+      "category": "Alkohol",
+      "question": "RUM?",
+      "score": 101
+    }
+  ]
+}

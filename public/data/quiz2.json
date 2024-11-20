@@ -1,0 +1,29 @@
+{
+  "questions": [
+    {
+      "category": "Filmy",
+      "question": "Kdo je Iron Man?",
+      "score": 10
+    },
+    {
+      "category": "IT",
+      "question": "Co je x86??",
+      "score": 20
+    },
+    {
+      "category": "Zemepis",
+      "question": "Kde je Mt. Everest?",
+      "score": 50
+    },
+    {
+      "category": "Alkohol",
+      "question": "RUM?",
+      "score": 100
+    },
+    {
+      "category": "Drogy",
+      "question": "John Snow?",
+      "score": 200
+    }
+  ]
+}

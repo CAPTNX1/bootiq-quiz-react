@@ -1,0 +1,10 @@
+.modal {
+  padding: 40px;
+}
+
+.modal::backdrop {
+  background: rgba(0, 0, 0, 1.5);
+}
+
+.modal-content {
+}
