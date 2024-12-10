@@ -43,6 +43,14 @@ const Teams: React.FC = () => {
     setTeams((prevTeams) => prevTeams.filter((team) => team.id !== id));
   };
 
+  const resetScore = () => {
+    const resetTeams = teams.map((team) => ({
+      ...team,
+      score: 0,
+    }));
+    setTeams(resetTeams);
+  };
+
   return (
     <div className="teams-wrap">
       <h1>Team Management</h1>
@@ -55,6 +63,10 @@ const Teams: React.FC = () => {
         />
         <button onClick={addTeam}>Add Team</button>
       </div>
+
+      {teams.length !== 0 && (
+        <button onClick={resetScore}>Vyresetovat skóre</button>
+      )}
 
       {/* Pass teams and deleteTeam to TeamList */}
       <TeamList teams={teams} deleteTeam={deleteTeam} />

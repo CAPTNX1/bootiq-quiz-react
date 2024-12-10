@@ -32,14 +32,6 @@ function Landing() {
       .catch((error) => console.error("Error fetching data:", error));
   }
 
-  // Use useEffect to log quizData after it is updated
-  useEffect(() => {
-    if (quizData && quizData.questions) {
-      console.log(quizData.questions[0].question); // Log the first question when quizData is updated
-      //window.location.href = "/quizboard";
-    }
-  }, [quizData]); // Run this effect whenever quizData changes
-
   if (!quizData) {
     return (
       <>
