@@ -1,6 +1,6 @@
 import QuizCard from "./QuizCard";
 import TeamList from "./TeamList";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 type Question = {
   category: string;
   question: string;

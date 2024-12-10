@@ -22,8 +22,6 @@ function QuizCard({ data, teams }: QuizCardProps) {
     setAnswered(false);
   };
 
-  //console.log(teams.name);
-
   return (
     <>
       <Modal openModal={open} closeModal={handleClose}>
