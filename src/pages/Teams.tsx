@@ -51,6 +51,14 @@ const Teams: React.FC = () => {
     setTeams(resetTeams);
   };
 
+  const updateScore = (id: number, delta: number) => {
+    setTeams((prevTeams) =>
+      prevTeams.map((team) =>
+        team.id === id ? { ...team, score: team.score + delta } : team
+      )
+    );
+  };
+
   return (
     <div className="teams-wrap">
       <h1>Team Management</h1>
@@ -69,7 +77,11 @@ const Teams: React.FC = () => {
       )}
 
       {/* Pass teams and deleteTeam to TeamList */}
-      <TeamList teams={teams} deleteTeam={deleteTeam} />
+      <TeamList
+        teams={teams}
+        deleteTeam={deleteTeam}
+        updateScore={updateScore}
+      />
     </div>
   );
 };
