@@ -5,8 +5,8 @@ function Header() {
     <header>
       <img src={BootiqLogo} width={155} height={77} />
       <nav>
-        <a href="/landing">Home</a>
-        <a href="/teams">Teams</a>
+        <a href="/landing">Spustit kvíz</a>
+        <a href="/teams">Týmy</a>
       </nav>
     </header>
   );

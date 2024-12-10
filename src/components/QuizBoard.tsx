@@ -1,8 +1,6 @@
-import { useState } from "react";
-
 import QuizCard from "./QuizCard";
-import Modal from "./QuizModal";
-
+import TeamList from "./TeamList";
+import React, { useEffect, useState } from "react";
 type Question = {
   category: string;
   question: string;
@@ -11,6 +9,12 @@ type Question = {
 
 type BoardProps = {
   quizData: Question[];
+};
+
+type Team = {
+  id: number;
+  name: string;
+  score: number;
 };
 
 function QuizBoard({ quizData }: BoardProps) {
@@ -26,38 +30,34 @@ function QuizBoard({ quizData }: BoardProps) {
     {}
   );
 
-  const [open, setOpen] = useState(false);
-
-  const handleOpen = () => {
-    setOpen(true);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-  };
-
-  console.log(groupedData);
+  const [teams, setTeams] = useState<Team[]>([]);
+  // Load teams from localStorage when the component mounts
+  useEffect(() => {
+    const storedTeams = localStorage.getItem("teams");
+    if (storedTeams) {
+      setTeams(JSON.parse(storedTeams));
+    }
+  }, []);
   return (
-    <>
-      <Modal openModal={open} closeModal={handleClose}>
-        <p>hello world</p>
-      </Modal>
-      <button onClick={handleOpen}>open modal</button>
+    <div className="quizboard">
+      <div className="team-panel">
+        <TeamList teams={teams} />
+      </div>
       <div className="quiz-card-grid">
         {Object.keys(groupedData).map((category) => (
           <div key={category} className="quiz-column">
             <h3>{category}</h3>
             <ul className="quiz-column-cards">
               {groupedData[category].map((data, index) => (
-                <li key={index}>
-                  <QuizCard data={data} />
+                <li className="quiz-slot" key={index}>
+                  <QuizCard data={data} teams={teams} />
                 </li>
               ))}
             </ul>
           </div>
         ))}
       </div>
-    </>
+    </div>
   );
 }
 

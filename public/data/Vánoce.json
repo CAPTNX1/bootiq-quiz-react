@@ -3,7 +3,8 @@
     {
       "category": "Filmy",
       "question": "Kdo je Batman?",
-      "score": 10
+      "score": 10,
+      "answer": "Odpoved"
     },
     {
       "category": "Filmy",
@@ -13,12 +14,14 @@
     {
       "category": "Filmy",
       "question": "Kdo je Batman?",
-      "score": 30
+      "score": 30,
+      "answer": "Odpoved2"
     },
     {
       "category": "Filmy",
       "question": "Kdo je Batman?",
-      "score": 50
+      "score": 50,
+      "answer": "Odpoved3"
     },
     {
       "category": "Filmy",

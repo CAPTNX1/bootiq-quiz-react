@@ -1,10 +1,28 @@
 .modal {
   padding: 40px;
+  outline: 3px solid hsla(0, 0%, 100%, 0.102);
+  border: none;
+  border-radius: 4px;
+  width: 500px;
+  height: 250px;
 }
 
 .modal::backdrop {
-  background: rgba(0, 0, 0, 1.5);
+  background: rgba(0, 0, 0, 0.5);
 }
 
 .modal-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  font-size: 32px;
+  height: 100%;
+}
+
+.team-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
 }

@@ -19,8 +19,7 @@ const Modal: React.FC<ModalProps> = ({ openModal, closeModal, children }) => {
 
   return (
     <dialog ref={ref} onCancel={closeModal} className="modal">
-      {children}
-      <button onClick={closeModal}>&times;</button>
+      <div className="modal-content">{children}</div>
     </dialog>
   );
 };
