@@ -67,6 +67,10 @@ input {
   font-size: 24px;
 }
 
+.yellow {
+  color: var(--c-yellow);
+}
+
 .flex {
   display: flex;
   gap: 30px;
@@ -112,7 +116,7 @@ input {
   }
 
   .team-name {
-    width: 100px;
+    width: 150px;
   }
 }
 

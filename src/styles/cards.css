@@ -25,7 +25,7 @@
 
 .quiz-card-grid {
   display: grid;
-  grid-auto-columns: auto;
+  grid-auto-columns: minmax(auto, 270px);
   grid-auto-flow: column;
   margin: 0;
   padding: 0;

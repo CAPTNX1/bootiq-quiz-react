@@ -4,9 +4,10 @@ import Modal from "./QuizModal";
 type QuizCardProps = {
   data: any;
   teams: any;
+  updateScore: (teamId: number, scoreDelta: number) => void;
 };
 
-function QuizCard({ data, teams }: QuizCardProps) {
+function QuizCard({ data, teams, updateScore }: QuizCardProps) {
   const [open, setOpen] = useState(false);
   const [answered, setAnswered] = useState(true);
 
@@ -22,7 +23,10 @@ function QuizCard({ data, teams }: QuizCardProps) {
     setAnswered(false);
   };
 
-  //console.log(teams.name);
+  const addScore = (teamId: number) => {
+    updateScore(teamId, data.score);
+    setOpen(false);
+  };
 
   return (
     <>
@@ -34,7 +38,11 @@ function QuizCard({ data, teams }: QuizCardProps) {
             <div className="team-row">
               {teams.map((team: any) => (
                 <div className="" key={team.id}>
-                  <button type="button" className="">
+                  <button
+                    type="button"
+                    className=""
+                    onClick={() => addScore(team.id)}
+                  >
                     {team.name}
                   </button>
                 </div>

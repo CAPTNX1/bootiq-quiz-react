@@ -1,6 +1,6 @@
 import QuizCard from "./QuizCard";
 import TeamList from "./TeamList";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 type Question = {
   category: string;
   question: string;
@@ -18,6 +18,7 @@ type Team = {
 };
 
 function QuizBoard({ quizData }: BoardProps) {
+  const [isInitialized, setIsInitialized] = useState(false); // Flag to track initialization
   // Group questions by category
   const groupedData = quizData.reduce(
     (acc: { [key: string]: Question[] }, question) => {
@@ -37,7 +38,23 @@ function QuizBoard({ quizData }: BoardProps) {
     if (storedTeams) {
       setTeams(JSON.parse(storedTeams));
     }
+    setIsInitialized(true); // Mark initialization as complete
   }, []);
+
+  // Save teams to localStorage whenever `teams` changes, but only after initialization
+  useEffect(() => {
+    if (isInitialized) {
+      localStorage.setItem("teams", JSON.stringify(teams));
+    }
+  }, [teams, isInitialized]);
+
+  const updateScore = (teamId: number, scoreDelta: number) => {
+    setTeams((prevTeams) =>
+      prevTeams.map((team) =>
+        team.id === teamId ? { ...team, score: team.score + scoreDelta } : team
+      )
+    );
+  };
   return (
     <div className="quizboard">
       <div className="team-panel">
@@ -50,7 +67,11 @@ function QuizBoard({ quizData }: BoardProps) {
             <ul className="quiz-column-cards">
               {groupedData[category].map((data, index) => (
                 <li className="quiz-slot" key={index}>
-                  <QuizCard data={data} teams={teams} />
+                  <QuizCard
+                    data={data}
+                    teams={teams}
+                    updateScore={updateScore}
+                  />
                 </li>
               ))}
             </ul>
