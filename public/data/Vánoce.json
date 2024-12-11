@@ -4,12 +4,14 @@
       "category": "Filmy",
       "question": "Kdo je Batman?",
       "score": 10,
-      "answer": "Odpoved"
+      "answer": "Odpoved",
+      "audio": "/data/test.mp3"
     },
     {
       "category": "Filmy",
       "question": "Kdo je Batman?",
-      "score": 20
+      "score": 20,
+      "audio": null
     },
     {
       "category": "Filmy",

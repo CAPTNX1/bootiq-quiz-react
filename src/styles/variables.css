@@ -4,3 +4,12 @@
   --c-black: #1e1e1e;
   --c-bg-black: #1a1a1a;
 }
+
+:root {
+  .darkmode {
+    --c-yellow: pink;
+    --c-yellow-hover: green;
+    --c-black: blue;
+    --c-bg-black: white;
+  }
+}

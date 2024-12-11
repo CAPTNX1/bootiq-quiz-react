@@ -10,9 +10,20 @@ type QuizCardProps = {
 function QuizCard({ data, teams, updateScore }: QuizCardProps) {
   const [open, setOpen] = useState(false);
   const [answered, setAnswered] = useState(true);
+  const [audioPlayer, setAudioPlayer] = useState<HTMLAudioElement | null>(null);
 
   const handleOpen = () => {
     setOpen(true);
+
+    if (audioPlayer) {
+      audioPlayer.pause();
+      audioPlayer.currentTime = 0;
+    }
+    if (data.audio) {
+      const newAudio = new Audio(data.audio);
+      setAudioPlayer(newAudio);
+      newAudio.play();
+    }
   };
 
   const handleClose = () => {
@@ -26,6 +37,10 @@ function QuizCard({ data, teams, updateScore }: QuizCardProps) {
   const addScore = (teamId: number) => {
     updateScore(teamId, data.score);
     setOpen(false);
+    if (audioPlayer) {
+      audioPlayer.pause();
+      audioPlayer.currentTime = 0;
+    }
   };
 
   return (
@@ -52,6 +67,12 @@ function QuizCard({ data, teams, updateScore }: QuizCardProps) {
         )}
         {answered && (
           <>
+            {data.audio && (
+              <video autoPlay width="250">
+                <source src="src/assets/musi-circle.mp4" type="video/mp4" />
+              </video>
+            )}
+
             <button onClick={handleAnswer}>&rarr;</button>
           </>
         )}
