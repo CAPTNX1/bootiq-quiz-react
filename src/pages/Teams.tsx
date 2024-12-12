@@ -67,9 +67,9 @@ const Teams: React.FC = () => {
           type="text"
           value={teamName}
           onChange={(e) => setTeamName(e.target.value)}
-          placeholder="Enter team name"
+          placeholder="Zadej jméno týmu"
         />
-        <button onClick={addTeam}>Add Team</button>
+        <button onClick={addTeam}>Přidej tým</button>
       </div>
 
       {teams.length !== 0 && (

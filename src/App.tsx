@@ -7,7 +7,7 @@ import QuizBoard from "./components/QuizBoard";
 
 function App() {
   return (
-    <>
+    <div className="">
       <Header />
       <main>
         <Router>
@@ -18,7 +18,7 @@ function App() {
           </Switch>
         </Router>
       </main>
-    </>
+    </div>
   );
 }
 
