@@ -1,5 +1,7 @@
 import { useState } from "react";
 import Modal from "./QuizModal";
+import imgPlay from "../assets/play.svg";
+import imgStop from "../assets/stop.svg";
 
 type QuizCardProps = {
   data: any;
@@ -14,7 +16,9 @@ function QuizCard({ data, teams, updateScore }: QuizCardProps) {
 
   const handleOpen = () => {
     setOpen(true);
+  };
 
+  const playAudio = () => {
     if (audioPlayer) {
       audioPlayer.pause();
       audioPlayer.currentTime = 0;
@@ -24,6 +28,10 @@ function QuizCard({ data, teams, updateScore }: QuizCardProps) {
       setAudioPlayer(newAudio);
       newAudio.play();
     }
+  };
+
+  const stopAudio = () => {
+    if (audioPlayer) audioPlayer.pause();
   };
 
   const handleClose = () => {
@@ -45,7 +53,7 @@ function QuizCard({ data, teams, updateScore }: QuizCardProps) {
 
   return (
     <>
-      <Modal openModal={open} closeModal={handleClose}>
+      <Modal openModal={open} closeModal={handleClose} media={data.audio}>
         {data.question}
         {!answered && (
           <>
@@ -68,9 +76,19 @@ function QuizCard({ data, teams, updateScore }: QuizCardProps) {
         {answered && (
           <>
             {data.audio && (
-              <video autoPlay width="250">
-                <source src="src/assets/musi-circle.mp4" type="video/mp4" />
-              </video>
+              <div className="media-player">
+                <video autoPlay loop width="250">
+                  <source src="src/assets/musi-circle.mp4" type="video/mp4" />
+                </video>
+                <div className="media-controls">
+                  <button type="button" onClick={playAudio}>
+                    <img src={imgPlay} width={20} height={20} />
+                  </button>
+                  <button type="button" onClick={stopAudio}>
+                    <img src={imgStop} width={20} height={20} />
+                  </button>
+                </div>
+              </div>
             )}
 
             <button onClick={handleAnswer}>&rarr;</button>

@@ -7,6 +7,10 @@
   height: 250px;
 }
 
+.modal-media {
+  height: 350px;
+}
+
 .modal::backdrop {
   background: rgba(0, 0, 0, 0.5);
 }

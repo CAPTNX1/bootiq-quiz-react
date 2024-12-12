@@ -1,0 +1,13 @@
+.media-player {
+  display: grid;
+  grid-template-columns: 1fr;
+
+  video {
+    margin: 0 auto;
+  }
+}
+
+.media-controls {
+  display: flex;
+  gap: 20px;
+}

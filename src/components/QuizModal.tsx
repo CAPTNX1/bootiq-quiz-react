@@ -4,9 +4,15 @@ type ModalProps = {
   openModal: boolean;
   closeModal: () => void;
   children: ReactNode;
+  media: boolean;
 };
 
-const Modal: React.FC<ModalProps> = ({ openModal, closeModal, children }) => {
+const Modal: React.FC<ModalProps> = ({
+  openModal,
+  closeModal,
+  children,
+  media,
+}) => {
   const ref = useRef<HTMLDialogElement>(null);
 
   useEffect(() => {
@@ -18,7 +24,11 @@ const Modal: React.FC<ModalProps> = ({ openModal, closeModal, children }) => {
   }, [openModal]);
 
   return (
-    <dialog ref={ref} onCancel={closeModal} className="modal">
+    <dialog
+      ref={ref}
+      onCancel={closeModal}
+      className={media ? "modal modal-media" : "modal"}
+    >
       <div className="modal-content">{children}</div>
     </dialog>
   );
