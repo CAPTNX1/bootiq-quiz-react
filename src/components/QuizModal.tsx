@@ -4,14 +4,16 @@ type ModalProps = {
   openModal: boolean;
   closeModal: () => void;
   children: ReactNode;
-  media: boolean;
+  audio: boolean;
+  image: boolean;
 };
 
 const Modal: React.FC<ModalProps> = ({
   openModal,
   closeModal,
   children,
-  media,
+  audio,
+  image,
 }) => {
   const ref = useRef<HTMLDialogElement>(null);
 
@@ -27,7 +29,9 @@ const Modal: React.FC<ModalProps> = ({
     <dialog
       ref={ref}
       onCancel={closeModal}
-      className={media ? "modal modal-media" : "modal"}
+      className={
+        "modal " + (audio ? "modal-audio" : image ? "modal-image" : "")
+      }
     >
       <div className="modal-content">{children}</div>
     </dialog>

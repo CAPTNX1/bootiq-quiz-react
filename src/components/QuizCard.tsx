@@ -53,7 +53,12 @@ function QuizCard({ data, teams, updateScore }: QuizCardProps) {
 
   return (
     <>
-      <Modal openModal={open} closeModal={handleClose} media={data.audio}>
+      <Modal
+        openModal={open}
+        closeModal={handleClose}
+        audio={data.audio}
+        image={data.image}
+      >
         {data.question}
         {!answered && (
           <>
@@ -91,7 +96,15 @@ function QuizCard({ data, teams, updateScore }: QuizCardProps) {
               </div>
             )}
 
-            <button onClick={handleAnswer}>&rarr;</button>
+            {data.image && (
+              <>
+                <img src={data.image} width={500} />
+              </>
+            )}
+
+            <button onClick={handleAnswer} className="arrow-btn">
+              &rarr;
+            </button>
           </>
         )}
       </Modal>

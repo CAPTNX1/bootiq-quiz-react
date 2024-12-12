@@ -5,13 +5,15 @@
       "question": "Kdo je Batman?",
       "score": 10,
       "answer": "Odpoved",
-      "audio": "/data/test.mp3"
+      "audio": "/data/audio/test.mp3",
+      "image": null
     },
     {
       "category": "Filmy",
       "question": "Kdo je Batman?",
       "score": 20,
-      "audio": null
+      "audio": null,
+      "image": "/data/image/acriosOG.png"
     },
     {
       "category": "Filmy",

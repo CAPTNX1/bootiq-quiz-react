@@ -1,7 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&display=swap");
 
-body {
+* {
   font-family: "Geist Mono", monospace;
+}
+
+body {
   background-color: var(--c-bg-black);
   color: #fff;
   display: flex;
@@ -126,4 +129,8 @@ input {
 
 .quiz-slot {
   min-height: 132px;
+}
+
+.arrow-btn {
+  font-size: 32px;
 }
