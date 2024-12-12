@@ -7,7 +7,7 @@ import QuizBoard from "./components/QuizBoard";
 
 function App() {
   return (
-    <div className="darkmode">
+    <div className="">
       <Header />
       <main>
         <Router>
