@@ -134,3 +134,8 @@ input {
 .arrow-btn {
   font-size: 32px;
 }
+
+.tree {
+  display: block;
+  margin: 0 auto;
+}
